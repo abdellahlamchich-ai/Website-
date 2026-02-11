@@ -3,82 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Website</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <header id="home">
-        <h1>Welcome to My Enhanced Website</h1>
-        <button id="dark-mode-toggle">Toggle Dark Mode</button>
-    </header>
-
-    <section id="portfolio">
-        <h2>Portfolio</h2>
-        <div class="portfolio-items">
-            <div class="portfolio-item">Project 1</div>
-            <div class="portfolio-item">Project 2</div>
-            <div class="portfolio-item">Project 3</div>
-        </div>
-    </section>
-
-    <section id="testimonials">
-        <h2>Testimonials</h2>
-        <div class="testimonial-slider">
-            <div class="testimonial-item">"Great service!" - Customer A</div>
-            <div class="testimonial-item">"Loved the experience!" - Customer B</div>
-            <div class="testimonial-item">"Would recommend to everyone!" - Customer C</div>
-        </div>
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <input type="text" id="search" placeholder="Search blog...">
-        <div class="blog-posts">
-            <article class="blog-post">Blog Post 1</article>
-            <article class="blog-post">Blog Post 2</article>
-            <article class="blog-post">Blog Post 3</article>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact</h2>
-        <form id="contact-form">
-            <input type="email" placeholder="Your Email" required />
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init('ghId0fy1ymRFOAvvO');
-        })();
-
-        document.getElementById('contact-form').onsubmit = function(event) {
-            event.preventDefault();
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)  
-                .then(function() {
-                    alert('Message sent successfully!');
-                }, function(error) {
-                    alert('Failed to send message: ' + JSON.stringify(error));
-                });
+    <title>My Website</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #E0E0E0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s, color 0.5s;
         }
-
-        document.getElementById('dark-mode-toggle').onclick = function() {
-            document.body.classList.toggle('dark-mode');
-        };
+        .dark-mode {
+            background-color: #121212;
+            color: #E0E0E0;
+        }
+        .light-mode {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        header {
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <header>
+        <h1>Welcome to My Website</h1>
+        <p>Contact: <a href="mailto:babdellah378@gmail.com" style="color: #E0E0E0;">babdellah378@gmail.com</a></p>
+        <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+    </header>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            body.classList.toggle("light-mode");
+            body.classList.toggle("dark-mode");
+        }
     </script>
 </body>
 </html>
