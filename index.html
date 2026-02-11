@@ -3,44 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Abdellah's Website</title>
     <style>
         body {
-            background-color: #121212;
-            color: #E0E0E0;
+            margin: 0;
             font-family: Arial, sans-serif;
             transition: background-color 0.5s, color 0.5s;
         }
         .dark-mode {
             background-color: #121212;
-            color: #E0E0E0;
-        }
-        .light-mode {
-            background-color: #FFFFFF;
-            color: #000000;
+            color: #ffffff;
         }
         header {
-            padding: 20px;
+            background: linear-gradient(45deg, #6a11cb, #2575fc);
+            padding: 1rem;
             text-align: center;
         }
-        button {
-            padding: 10px;
-            margin-top: 20px;
+        section {
+            padding: 2rem;
         }
+        .portfolio, .testimonials, .blog {
+            margin: 2rem 0;
+        }
+        /* Add additional styling for forms, sliders and animations here */
     </style>
 </head>
-<body class="dark-mode">
+<body>
     <header>
-        <h1>Welcome to My Website</h1>
-        <p>Contact: <a href="mailto:babdellah378@gmail.com" style="color: #E0E0E0;">babdellah378@gmail.com</a></p>
-        <button onclick="toggleMode()">Toggle Light/Dark Mode</button>
+        <h1>Welcome to Abdellah's Website</h1>
+        <button id="darkModeToggle">Toggle Dark Mode</button>
     </header>
+
+    <section class="portfolio">
+        <h2>My Portfolio</h2>
+        <!-- Portfolio items here -->
+    </section>
+
+    <section class="testimonials">
+        <h2>Testimonials</h2>
+        <!-- Testimonials slider here -->
+    </section>
+
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <form action="https://YOUR_SERVICE_URL" method="POST">
+            <input type="email" name="email" required placeholder="Your email"/>
+            <textarea name="message" required placeholder="Your message"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <section class="blog">
+        <h2>Blog</h2>
+        <input type="text" id="searchBar" placeholder="Search blogs..." />
+        <div id="blogPosts">
+            <!-- Blog posts here -->
+        </div>
+    </section>
+
     <script>
-        function toggleMode() {
-            const body = document.body;
-            body.classList.toggle("light-mode");
+        const toggle = document.getElementById("darkModeToggle");
+        const body = document.body;
+        toggle.addEventListener("click", () => {
             body.classList.toggle("dark-mode");
-        }
+        });
+        // Add further JavaScript for smooth animations and blog functionality
     </script>
 </body>
 </html>
