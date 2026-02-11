@@ -1,71 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Enhanced Website</title>
+    <title>Your Website</title>
 </head>
 <body>
-    <header>
-        <h1>Welcome to Our Website!</h1>
-        <input type="text" id="search" placeholder="Search blog...">
-    </header>
-
-    <main>
-        <section id="testimonials">
-            <h2>Testimonials</h2>
-            <div id="testimonial-slider">
-                <div class="testimonial" id="testimonial-1">
-                    <p>"This service is amazing!" - User A</p>
-                </div>
-                <div class="testimonial" id="testimonial-2">
-                    <p>"I had a great experience!" - User B</p>
-                </div>
-                <div class="testimonial" id="testimonial-3">
-                    <p>"Highly recommend to everyone!" - User C</p>
-                </div>
-            </div>
-            <button onclick="prevTestimonial()">Previous</button>
-            <button onclick="nextTestimonial()">Next</button>
-        </section>
-        
-        <section id="blog">
-            <h2>Blog Posts</h2>
-            <div id="blog-posts">
-                <!-- Blog posts will be populated here based on search -->
-            </div>
-        </section>
-    </main>
-
     <script>
-        let currentTestimonial = 0;
-
-        function showTestimonial(index) {
-            const testimonials = document.querySelectorAll('.testimonial');
-            testimonials.forEach((testimonial, idx) => {
-                testimonial.style.display = idx === index ? 'block' : 'none';
-            });
-        }
-
-        function nextTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % 3;
-            showTestimonial(currentTestimonial);
-        }
-
-        function prevTestimonial() {
-            currentTestimonial = (currentTestimonial - 1 + 3) % 3;
-            showTestimonial(currentTestimonial);
-        }
-
-        document.getElementById('search').addEventListener('input', function() {
-            const query = this.value.toLowerCase();
-            const posts = ["Post 1", "Post 2", "Post 3"]; // Example blog posts
-            const filteredPosts = posts.filter(post => post.toLowerCase().includes(query));
-            document.getElementById('blog-posts').innerHTML = filteredPosts.join('<br>');
-        });
-
-        showTestimonial(currentTestimonial); // Show the first testimonial initially
+        // Replace YOUR_PUBLIC_KEY with the actual public key
+        const publicKey = 'ghId0fy1ymRFOAvvO';
     </script>
 </body>
 </html>
